@@ -1,0 +1,53 @@
+<tr><td class="sunday">6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+                        <tr><td class="sunday">13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                        <tr><td class="sunday">20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+                        <tr><td class="sunday">27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="month">
+                <h3>February</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="sunday">Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="sunday"></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
+                        <tr><td class="sunday">4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+                        <tr><td class="sunday">11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+                        <tr><td class="sunday">18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+                        <tr><td class="sunday">25</td><td>26</td><td>27</td><td>28</td><td></td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Copy đoạn trên cho các trang 2, 3,... -->
+
+        <div class="navigation">
+            <button class="nav-button" id="prev-button">Trang trước</button>
+            <button class="nav-button" id="next-button">Trang sau</button>
+        </div>
+    </div>
+
+    <script>
+        const pages = document.querySelectorAll('.calendar');
+        let currentPage = 0;
+
+        document.getElementById('prev-button').addEventListener('click', () => {
+            pages[currentPage].classList.remove('active');
+            currentPage = (currentPage - 1 + pages.length) % pages.length;
+            pages[currentPage].classList.add('active');
+        });
+
+        document.getElementById('next-button').addEventListener('click', () => {
+            pages[currentPage].classList.remove('active');
+            currentPage = (currentPage + 1) % pages.length;
+            pages[currentPage].classList.add('active');
+        });
+    </script>
+</body>
+</html>
